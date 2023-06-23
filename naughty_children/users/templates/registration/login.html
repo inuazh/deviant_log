@@ -4,11 +4,11 @@
   {% if form.errors %}
     <p>Ваше имя или пароль не совпали. Пожалуйста, попробуйте выполнить попытку входа ещё раз.</p>
   {% endif %}
-  <form method='post' action='{% url 'users:login' %}'>
+  <form method="post" action="{% url 'users:login' %}">
     {% csrf_token %}
     {{ form.as_p }}
     <button name='submit'>Авторизоваться</button>
-    <input type='hidden' name='next'
-      value='{% url 'error_log:index' % }' />
+    <input type="hidden" name="next" 
+      value="{% url 'error_log:index' %}" />
   </form>
 {% endblock content %}
