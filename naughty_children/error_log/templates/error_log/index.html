@@ -1,5 +1,12 @@
 {% extends 'error_log/base.html' %}
 
+{% load static %}
+
+{% block css_aditional %}
+<link rel='stylesheet' href="{% static 'error_log/css/index.css' %}">
+{% endblock%}
+
+
 {% block content %}
   <p>Всем привет. Это приложение было создано для социальных педагогов, работающих в школе,
   чтобы было удобно составлять отчёты о происшествиях детишек.<p>
