@@ -1,0 +1,22 @@
+{% extends 'error_log/base.html' %}
+
+{% block content %}
+  <p>Тема: {{ topic }}</p>
+  <p>Отчёт:</p>
+  <p>
+    <a href='{% url 'error_log:new_entry' topic.id %}'>добавить новую запись</a>
+  </p>
+  <ul>
+  {% for entry in entries %}
+    <li>
+      <p>{{ entry.date_added|date:'M d, Y H:i'  }}</p>
+      <p>{{ entry.text|linebreaks }}</p>
+      <p>
+        <a href='{% url 'error_log:edit_entry' entry.id %}'>отредактировать запись</a>
+      </p>
+    </li>
+  {% empty %}
+    <li>Пока нет записей по этой теме.</li>
+  {% endfor %}
+  </ul>
+{% endblock content %}

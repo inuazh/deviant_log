@@ -1,0 +1,11 @@
+{% extends 'error_log/base.html' %}
+
+{% block content %}
+  <p><a href='{% url 'error_log:topic' topic.id %}'>{{ topic }}</a></p>
+  <p>Создайте новую запись:</p>
+  <form action='{% url 'error_log:new_entry' topic.id %}' method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name='submit'>Опубликовать</button>
+  </form>
+{% endblock content %}
