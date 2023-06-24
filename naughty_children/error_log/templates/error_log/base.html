@@ -1,5 +1,8 @@
 {% load static %}
 
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,17 +10,22 @@
     {% block css_aditional %}{% endblock%}
 </head>
 <body>
-  <p>
-    <a href='{% url 'error_log:index' %}'>Инсайты непослушных: Журнал о шаловливых следах</a> -
-    <a href='{% url 'error_log:topics' %}'>Темы</a> -
+  
+<header>
+  <nav>
+    <main class=" header_container">
+    <a href='{% url 'error_log:index' %}'>Главная</a> 
+    <a href='{% url 'error_log:topics' %}'>Темы</a> 
     {% if user.is_authenticated %}
-      Здравствуйте, {{ user.username }}.
+      <a>Здравствуйте, {{ user.username }}.</a>
       <a href="{% url 'users:logout' %}">Покинуть приложение</a>
     {% else %}
-      <a href="{% url 'users:register' %}">Зарегистрироваться</a> -
+      <a href="{% url 'users:register' %}">Зарегистрироваться</a> 
       <a href="{% url 'users:login' %}">Авторизироваться</a>
     {% endif %}
-  </p>
+  </main>
+  </nav>
+</header>
   
   {% block content %}{% endblock content %}
 </body>

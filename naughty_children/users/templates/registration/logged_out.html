@@ -1,5 +1,16 @@
 {% extends 'error_log/base.html' %}
 
+{% load static %}
+
+{% block css_aditional %}
+<link rel='stylesheet' href="{% static 'error_log/css/index.css' %}">
+{% endblock%}
+
 {% block content %}
-  <p>Вы вышли из своей учётной записи. До встречи!</p>
+
+  <main class="container">
+    <h2 style="font-weight: 400;">Вы вышли из своей учётной записи. До встречи!</h2>
+
+  </main>
+
 {% endblock content %}

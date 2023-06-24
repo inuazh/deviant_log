@@ -1,11 +1,20 @@
 {% extends 'error_log/base.html' %}
 
+{% load static %}
+
+{% block css_aditional %}
+<link rel='stylesheet' href="{% static 'error_log/css/index.css' %}">
+{% endblock%}
+
+
 {% block content %}
-  <p><a href='{% url 'error_log:topic' topic.id %}'>{{ topic }}</a></p>
+<main class="container topics">
+    <p><a class="create_new_topic" href="{% url 'error_log:topic' topic.id %}">{{ topic }}</a></p>
   <p>Создайте новую запись:</p>
-  <form action='{% url 'error_log:new_entry' topic.id %}' method='post'>
+  <form action="{% url 'error_log:new_entry' topic.id %}" method='post'>
     {% csrf_token %}
     {{ form.as_p }}
     <button name='submit'>Опубликовать</button>
   </form>
+</main>
 {% endblock content %}

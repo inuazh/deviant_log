@@ -1,11 +1,33 @@
 {% extends 'error_log/base.html' %}
 
+{% load static %}
+{% block css_aditional %}
+<link rel='stylesheet' href="{% static 'error_log/css/index.css' %}">
+{% endblock%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+
 {% block content %}
-  <p><a href='{% url 'error_log:topic' topic.id %}'>{{ topic }}</a></p>
+<main class="container topics">
+
+  <p><a class="create_new_topic" href='{% url 'error_log:topic' topic.id %}'>{{ topic }}</a></p>
   <p>Отредактируйте свою запись:</p>
   <form action='{% url 'error_log:edit_entry' entry.id %}' method='post'>
     {% csrf_token %}
     {{ form.as_p }}
     <button name='submit'>Сохранить изменения</button>
   </form>
+</main>
 {% endblock content %}
+  
+</body>
+</html>

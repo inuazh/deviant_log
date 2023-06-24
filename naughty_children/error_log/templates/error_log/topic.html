@@ -1,22 +1,43 @@
 {% extends 'error_log/base.html' %}
 
-{% block content %}
+{% load static %}
+
+{% block css_aditional %}
+<link rel='stylesheet' href="{% static 'error_log/css/index.css' %}">
+{% endblock%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  {% block content %}
+  <main class="container topics">
+    
   <p>Тема: {{ topic }}</p>
   <p>Отчёт:</p>
   <p>
-    <a href='{% url 'error_log:new_entry' topic.id %}'>добавить новую запись</a>
+    <a class="create_new_topic" href='{% url 'error_log:new_entry' topic.id %}'>добавить новую запись</a>
   </p>
   <ul>
   {% for entry in entries %}
-    <li>
+    <li class="grayBackground">
       <p>{{ entry.date_added|date:'M d, Y H:i'  }}</p>
       <p>{{ entry.text|linebreaks }}</p>
       <p>
-        <a href='{% url 'error_log:edit_entry' entry.id %}'>отредактировать запись</a>
+        <a class="create_new_topic" href='{% url 'error_log:edit_entry' entry.id %}'>отредактировать запись</a>
       </p>
     </li>
   {% empty %}
     <li>Пока нет записей по этой теме.</li>
   {% endfor %}
   </ul>
+  </main>
 {% endblock content %}
+  
+</body>
+</html>

@@ -1,3 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap');
+
+
+
 * {
-  color:blueviolet;
+  font-family: 'Titillium Web', Arial, sans-serif;
+  --primary-color: #8c84bd;
+  --hover-color: rgb(201, 184, 187);
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+}
+
+body {
+  max-width: 99vw;
+  overflow-x: hidden;
+
+
+}
+
+
+/* header */
+
+.header_container {
+  max-width: 800px;
+  margin: 0px auto;
+}
+
+header {
+  margin-top: -10px;
+  margin-left: -10px;
+  height: 25px;
+  width: 100%;
+  background-color: var(--primary-color);
+  padding: 10px;
+  border-bottom-left-radius: 15px;
+  /* Задает радиус скругления для нижнего левого угла */
+  border-bottom-right-radius: 15px;
+}
+
+nav {
+  margin-left: 15px;
+}
+
+nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #ffffff;
+  transition: 0.3s ease-out;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: var(--hover-color);
+}
+
+nav .username {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+nav .logout {
+  margin-left: 10px;
+  color: #f00;
+}
+
+/* /header */
+
+
+
+.container {
+  max-width: 800px;
+  margin: 70px auto 0 auto;
+  display: flex;
+}
+
+/* register */
+
+label {
+  font-weight: 600;
+}
+
+.helptext {
+  display: flex;
+}
+
+button[name='submit'] {
+  padding: 8px 18px;
+  font-size: px;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
+
+button[name='submit']:hover {
+  color: var(--hover-color);
+}
+
+button[name='submit']:focus {
+  outline: none;
+}
+
+/* /register */
+
+
+
+
+/* login */
+
+.login>form>button {
+  margin-top: 25px;
+}
+
+.login {
+  font-size: 20px;
+}
+
+/* /login */
+
+/* index */
+
+.index>p {
+  font-size: 20px;
+}
+
+/* /index */
+
+/* topics */
+
+.topics {
+  font-size: 20px;
+  display: block;
+}
+
+.create_new_topic {
+  padding: 3px 10px;
+  font-size: 16px;
+
+
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  background-color: rgb(134, 134, 134);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
+
+.topics>ul {
+  margin-top: 40px;
+  list-style-type: none;
+
+}
+
+
+.topics>ul>li>a {
+
+
+  text-decoration: none;
+  color: black;
+
+  padding: 5px 15px;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
+
+.topics>ul>li>a:hover {
+  color: var(--hover-color);
+}
+
+
+
+.topics>ul>li {
+
+  margin-bottom: 25px;
+}
+
+
+
+
+/* /topics */
+
+.grayBackground{
+  padding: 50px;
+  background: rgb(240, 240, 240);
 }
